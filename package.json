@@ -1,7 +1,7 @@
 {
-  "name": "calendar",
+  "name": "get-calendar",
   "version": "0.0.0",
-  "description": "Small description for calendar goes here",
+  "description": "Small description for get-calendar goes here",
   "private": true,
   "directories": {
     "doc": "doc",
