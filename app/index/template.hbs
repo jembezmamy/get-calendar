@@ -1,11 +1,3 @@
 {{input value=model.year type="number"}}
 
-{{#each model.months as |month|}}
-  <h2>{{month.name}}</h2>
-  {{#each month.days as |day|}}
-    {{day.number}}
-    <small>
-      {{day.weekDay}}
-    </small>
-  {{/each}}
-{{/each}}
+{{canvas-view canvas=renderer.output}}
