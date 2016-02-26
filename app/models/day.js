@@ -21,5 +21,12 @@ export default Ember.Object.extend({
     get() {
       return this.get("date").format("ddd");
     }
+  }),
+
+  isHoliday: Ember.computed("date", {
+    get() {
+      let weekDay = this.get("date").day()
+      return weekDay === 0 || weekDay === 1;
+    }
   })
 });
