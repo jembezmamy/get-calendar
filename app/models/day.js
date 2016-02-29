@@ -25,7 +25,7 @@ export default Ember.Object.extend({
 
   isHoliday: Ember.computed("date", {
     get() {
-      let weekDay = this.get("date").day()
+      let weekDay = this.get("date").day();
       return weekDay === 0 || weekDay === 1;
     }
   })

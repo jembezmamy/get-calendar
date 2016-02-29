@@ -24,8 +24,14 @@ export default Ember.Object.extend({
   }),
 
   redraw() {
-    this.clear();
-    this.draw();
+    let promise = this.clear();
+    if (promise && promise.then) {
+      promise.then(() => {
+        this.draw();
+      });
+    } else {
+      this.draw();
+    }
   },
 
   willDestroy() {

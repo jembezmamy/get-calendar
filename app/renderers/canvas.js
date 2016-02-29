@@ -31,7 +31,7 @@ export default BaseRenderer.extend({
     });
 
     this.get("look.texts").forEach((text) => {
-      ctx.font = text.font;
+      ctx.font = text.fontWeight + " " + text.fontSize + "px '" + text.fontFamily + "'";
       ctx.textAlign = text.align;
       ctx.fillText(text.value, this.scaleHorizontally(text.x), this.scaleVertically(text.y));
     });
