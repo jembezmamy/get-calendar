@@ -6,14 +6,15 @@ export default Ember.Object.extend({
   number: 0,
 
   year: Ember.computed.reads("month.year"),
+  locale: Ember.computed.reads("year.locale"),
 
-  date: Ember.computed("year.number", "month.number", "number", {
+  date: Ember.computed("year.number", "month.number", "number", "locale", {
     get() {
       return moment([
         this.get("year.number"),
         this.get("month.number") - 1,
         this.get("number")
-      ]);
+      ]).locale(this.get("locale"));
     }
   }),
 

@@ -43,6 +43,11 @@ export default Ember.Controller.extend({
       });
       return renderer;
     }
-  })
+  }),
+
+  locales: [
+    "az", "ca", "cs", "da", "de", "en", "es", "fi", "fr", "hr", "hu", "it",
+    "nb", "nl", "pl", "pt", "ro", "sk", "sq", "sr", "sv", "tr"
+  ]
 
 });

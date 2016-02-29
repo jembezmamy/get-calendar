@@ -1,5 +1,11 @@
 {{input value=model.year type="number"}}
 
+<select onchange={{action (mut model.locale) value="target.value"}}>
+  {{#each locales as |locale|}}
+    <option value={{locale}} selected={{eq model.locale locale}}>{{locale}}</option>
+  {{/each}}
+</select>
+
 <button {{action "download"}}>Download PDF</button>
 
 {{canvas-view canvas=renderer.output}}

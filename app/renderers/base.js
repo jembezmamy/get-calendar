@@ -19,7 +19,7 @@ export default Ember.Object.extend({
   marginLeft: mm(50),
   scale: 1,
 
-  scheduleRedraw: Ember.observer("look.lines.[]", "look.texts.[]", function() {
+  scheduleRedraw: Ember.observer("look.lines.[]", "look.texts.[]", "look.calendar.locale", function() {
     this.debouncedRun = Ember.run.debounce(this, this.redraw, 100);
   }),
 

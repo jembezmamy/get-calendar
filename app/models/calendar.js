@@ -6,6 +6,7 @@ export default Ember.Object.extend({
 
   year: 0,
   number: Ember.computed.reads("year"),
+  locale: null,
 
   months: Ember.computed({
     get() {

@@ -31,7 +31,7 @@ export default BaseLook.extend({
     }
   }),
 
-  texts: Ember.computed("calendar.months.@each.days.@each", "gutter", {
+  texts: Ember.computed("calendar.months.@each.days.@each", "gutter", "calendar.locale", {
     get() {
       let texts = [];
       let gutter = this.get("gutter");
