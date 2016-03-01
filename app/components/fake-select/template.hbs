@@ -1,0 +1,6 @@
+<select onchange={{action (mut value) value="target.value"}} class="fake-select-select">
+  {{#each content as |option|}}
+    <option value={{option}} selected={{eq value option}}>{{option}}</option>
+  {{/each}}
+</select>
+<div class="fake-select-value" {{action "proxyClick"}}>{{value}}</div>

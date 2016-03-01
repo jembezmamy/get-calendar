@@ -1,11 +1,24 @@
-{{input value=model.year type="number"}}
+<header class="page-header">
+  <h1 class="page-header-line-1">Get a&nbsp;calendar</h1>
+  <h2 class="page-header-line-2">one-page, full-year, printable &amp; free</h2>
+</header>
 
-<select onchange={{action (mut model.locale) value="target.value"}}>
-  {{#each locales as |locale|}}
-    <option value={{locale}} selected={{eq model.locale locale}}>{{locale}}</option>
-  {{/each}}
-</select>
+<div class="light-overlay lower"></div>
 
-<button {{action "download"}}>Download PDF</button>
+<div class="calendar-preview-wrapper">
+  <div class="calendar-preview">
+    <div class="calendar-preview-background"></div>
+    {{canvas-view canvas=renderer.output class="calendar-preview-content"}}
+  </div>
+</div>
 
-{{canvas-view canvas=renderer.output}}
+<div class="light-overlay upper"></div>
+
+<div class="form">
+
+  {{input value=model.year type="number" class="form-year-input"}}
+
+  {{fake-select value=model.locale content=locales class="form-locale-input"}}
+
+  <button {{action "download"}} class="form-button">Download PDF</button>
+</div>

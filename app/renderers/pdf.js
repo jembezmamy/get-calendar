@@ -3,7 +3,7 @@ import BaseRenderer from "./base";
 
 function loadFont(doc, name, fileName) {
   var req = new XMLHttpRequest();
-  req.open("GET", "/fonts/" + fileName, true);
+  req.open("GET", "/assets/fonts/" + fileName, true);
   req.responseType = "arraybuffer";
   req.send(null);
 

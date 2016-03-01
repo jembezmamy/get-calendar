@@ -1,0 +1,146 @@
+html
+  font-family: $primary-font
+  font-weight: $normal
+  font-size: 18px
+  line-height: 20px
+  height: 100%
+
+body
+  margin: 0
+  height: 100%
+  background-color: $light-grey
+  background-image: radial-gradient(circle farthest-side, mix($light-grey, white, 20%) 0%, $light-grey 100%)
+
+
+.page-header
+  position: absolute
+  left: 10px
+  right: 10px
+  top: 40px
+
+.page-header-line-1
+  font-weight: $normal
+  font-size: 26px
+  line-height: 36px
+  letter-spacing: 0.5em
+  text-transform: uppercase
+  margin: 0
+  text-align: center
+
+.page-header-line-2
+  font-weight: $normal
+  font-size: 18px
+  line-height: 24px
+  color: $grey
+  margin: 0
+  text-align: center
+
+.light-overlay
+  width: 520px
+  height: 740px
+  position: absolute
+  right: 0
+  bottom: 0
+  background-size: 100% 100%
+  background-image: url("/assets/images/light.png")
+  +high-dppx
+    background-image: url("/assets/images/light@2x.png")
+  &.upper
+    opacity: 0.5
+
+
+.calendar-preview-wrapper
+  position: absolute
+  left: 10px
+  right: 10px
+  top: 120px
+  bottom: 120px
+  max-width: 646px
+  margin: auto
+
+.calendar-preview
+  height: 0
+  width: 100%
+  position: absolute
+  padding-bottom: 459px * 100% / 646px
+
+.calendar-preview-background
+  position: absolute
+  width: 100%
+  height: 100%
+  background-size: 100% 100%
+  background-image: url("/assets/images/poster.png")
+  +high-dppx
+    background-image: url("/assets/images/poster@2x.png")
+
+.calendar-preview-content canvas
+  position: absolute
+  width: 626px * 100% / 646px
+  height: 439px * 100% / 459px
+  left: 0
+  top: 0
+  right: 0
+  bottom: 0
+  margin: auto
+
+
+.form
+  position: absolute
+  left: 10px
+  right: 10px
+  bottom: 20px
+  top: 60%
+  height: 50px
+  max-width: 420px
+  margin: auto
+  border-radius: 5px
+  box-shadow: 0 5px 3px rgba(black, 0.1)
+  background-color: white
+  font-size: 24px
+  line-height: 50px
+
+
+.form-year-input
+  font: inherit
+  border: none
+  background: none
+  line-height: 46px
+  border-bottom: 2px solid transparent
+  padding: 2px 15px 0
+  width: 89px
+  border-right: 1px dotted $light-grey
+  box-sizing: content-box
+  float: left
+  border-radius: 5px 0 0 5px
+  &:focus
+    outline: none
+    border-bottom-color: $primary-color
+
+.form-locale-input
+  width: 70px
+  height: 50px
+  padding: 0 15px
+  text-transform: uppercase
+  float: left
+  select:focus + .fake-select-value:after
+    content: ""
+    position: absolute
+    display: block
+    left: 0
+    right: 0
+    bottom: 0
+    border-bottom: 2px solid $primary-color
+
+.form-button
+  height: 50px
+  width: 200px
+  font: inherit
+  background: $primary-color
+  color: white
+  border: none
+  padding: 0
+  border-radius: 0 5px 5px 0
+  cursor: pointer
+  &:hover, &:focus
+    outline: none
+    background-color: mix($primary-color, white, 90%)
