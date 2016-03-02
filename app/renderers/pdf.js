@@ -1,9 +1,10 @@
 import Ember from "ember";
 import BaseRenderer from "./base";
+import ENV from 'get-calendar/config/environment';
 
 function loadFont(doc, name, fileName) {
   var req = new XMLHttpRequest();
-  req.open("GET", "/assets/fonts/" + fileName, true);
+  req.open("GET", ENV.assetHost + "assets/fonts/" + fileName, true);
   req.responseType = "arraybuffer";
   req.send(null);
 
@@ -15,15 +16,16 @@ function loadFont(doc, name, fileName) {
     req.onerror = () => { reject(); };
     req.onabort = () => { reject(); };
   });
-};
+}
 
 export default BaseRenderer.extend({
 
   output: Ember.computed("doc", {
     get() {
+      console.log(ENV);
       return new Ember.RSVP.Promise((resolve, reject) => {
         this.set("resolve", resolve);
-      })
+      });
     }
   }),
 
