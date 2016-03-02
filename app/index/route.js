@@ -6,7 +6,7 @@ export default Ember.Route.extend({
 
   model() {
     return Calendar.create({
-      year: moment().year(),
+      year: moment().add(3, "months").year(),
       locale: navigator.userLanguage || navigator.language ||
         navigator.browserLanguage || navigator.systemLanguage
     });
