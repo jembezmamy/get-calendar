@@ -1,5 +1,9 @@
 <header class="page-header">
-  <h1 class="page-header-line-1">Get a&nbsp;calendar</h1>
+  <h1 class="page-header-line-1">
+    Get
+    <br class="page-header-line-1-break" />
+    a calendar
+  </h1>
   <h2 class="page-header-line-2">one-page, full-year, printable &amp; free</h2>
 </header>
 
@@ -14,11 +18,13 @@
 
 <div class="light-overlay upper"></div>
 
-<div class="form">
+<div class="form-wrapper">
+  <div class="form">
 
-  {{input value=model.year type="number" class="form-year-input"}}
+    {{input value=model.year type="number" class="form-year-input"}}
 
-  {{fake-select value=model.locale content=locales class="form-locale-input"}}
+    {{fake-select value=model.locale content=locales class="form-locale-input"}}
 
-  <button {{action "download"}} class="form-button">Download PDF</button>
+    <button {{action "download"}} class="form-button">Download PDF</button>
+  </div>
 </div>

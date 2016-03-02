@@ -9,23 +9,30 @@ body
   margin: 0
   height: 100%
   background-color: $light-grey
-  background-image: radial-gradient(circle farthest-side, mix($light-grey, white, 20%) 0%, $light-grey 100%)
-
+  background-image: radial-gradient(circle farthest-side, $lightest-grey 0%, $light-grey 100%)
+  overflow: hidden
 
 .page-header
   position: absolute
   left: 10px
   right: 10px
   top: 40px
+  @media (max-width: $width-440)
+    top: 20px
 
 .page-header-line-1
   font-weight: $normal
   font-size: 26px
-  line-height: 36px
+  line-height: 32px
   letter-spacing: 0.5em
   text-transform: uppercase
-  margin: 0
+  margin: 4px 0
   text-align: center
+
+.page-header-line-1-break
+  display: none
+  @media (max-width: $width-440)
+    display: block
 
 .page-header-line-2
   font-weight: $normal
@@ -54,9 +61,10 @@ body
   left: 10px
   right: 10px
   top: 120px
-  bottom: 120px
   max-width: 646px
   margin: auto
+  @media (max-width: $width-440)
+    top: 140px
 
 .calendar-preview
   height: 0
@@ -84,37 +92,59 @@ body
   margin: auto
 
 
+.form-wrapper
+  position: absolute
+  left: 0
+  right: 0
+  bottom: 0
+  min-height: 15%
+  padding: 20px 10px
+  @media #{$horizontal-ratio}, (max-width: $width-440)
+    background-color: $lightest-grey
+    box-shadow: 0 -1px 10px rgba(black, 0.1)
+
+
 .form
   position: absolute
+  top: 20%
   left: 10px
   right: 10px
-  bottom: 20px
-  top: 60%
+  margin-top: -25px
   height: 50px
-  max-width: 420px
+  width: 420px
   margin: auto
   border-radius: 5px
   box-shadow: 0 5px 3px rgba(black, 0.1)
   background-color: white
   font-size: 24px
   line-height: 50px
+  @media #{$horizontal-ratio}, (max-width: $width-440)
+    box-shadow: none
+    border: 1px solid $light-grey
+  @media (max-width: $width-440)
+    width: auto
+    height: auto
+    position: static
 
 
 .form-year-input
   font: inherit
   border: none
   background: none
-  line-height: 46px
-  border-bottom: 2px solid transparent
-  padding: 2px 15px 0
+  line-height: 50px
+  padding: 0 15px
   width: 89px
   border-right: 1px dotted $light-grey
   box-sizing: content-box
   float: left
   border-radius: 5px 0 0 5px
+  color: $grey
   &:focus
     outline: none
-    border-bottom-color: $primary-color
+    color: black
+  @media (max-width: $width-440)
+    box-sizing: border-box
+    width: 50%
 
 .form-locale-input
   width: 70px
@@ -122,14 +152,12 @@ body
   padding: 0 15px
   text-transform: uppercase
   float: left
-  select:focus + .fake-select-value:after
-    content: ""
-    position: absolute
-    display: block
-    left: 0
-    right: 0
-    bottom: 0
-    border-bottom: 2px solid $primary-color
+  color: $grey
+  select:focus + .fake-select-value
+    color: black
+  @media (max-width: $width-440)
+    box-sizing: border-box
+    width: 50%
 
 .form-button
   height: 50px
@@ -144,3 +172,6 @@ body
   &:hover, &:focus
     outline: none
     background-color: mix($primary-color, white, 90%)
+  @media (max-width: $width-440)
+    width: 100%
+    border-radius: 0 0 5px 5px
