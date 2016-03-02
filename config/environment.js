@@ -49,6 +49,7 @@ module.exports = function(environment) {
   if (environment === 'production') {
     ENV.locationType = 'hash';
     ENV.baseURL = '/get-calendar/';
+    ENV.assetHost = '/get-calendar/';
   }
 
   return ENV;
