@@ -25,6 +25,12 @@
 
     {{fake-select value=model.locale content=locales class="form-locale-input"}}
 
-    <button {{action "download"}} class="form-button">Download PDF</button>
+    <button {{action "download"}} class="form-button">
+      {{#if isRendering}}
+        {{preloader-spinner}}
+      {{else}}
+        Download PDF
+      {{/if}}
+    </button>
   </div>
 </div>

@@ -6,7 +6,9 @@ export default Ember.Controller.extend({
 
   actions: {
     download() {
+      this.set("isRendering", true);
       this.get("pdfRenderer.output").then((stream) => {
+        this.set("isRendering", false);
         let url = stream.toBlobURL('application/pdf');
         let a = document.createElement("a");
         a.href = url;
@@ -48,6 +50,8 @@ export default Ember.Controller.extend({
   locales: [
     "az", "ca", "cs", "da", "de", "en", "es", "fi", "fr", "hr", "hu", "it",
     "nb", "nl", "pl", "pt", "ro", "sk", "sq", "sr", "sv", "tr"
-  ]
+  ],
+
+  isRendering: false
 
 });
